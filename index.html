@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This Keyword</title>
+    <style>
+        button{
+            /* color: ; */
+            padding: 20px;
+            margin: 10px;
+            mix-blend-mode: difference;
+        }
+    </style>
+    
+</head>
+<body>
+
+    <button>Click Button</button>
+    <button>Click Button</button>
+    <button>Click Button</button>
+    <button>Click Button</button>
+    <button>Click Button</button>
+    <button>Click Button</button>
+    <button>Click Button</button>
+    <button>Click Button</button>
+    <button>Click Button</button>
+    <button>Click Button</button>
+    <button>Click Button</button>
+    <button>Click Button</button>
+    <button>Click Button</button>
+    <button>Click Button</button>
+    <button>Click Button</button>
+    <button>Click Button</button>
+    <button>Click Button</button>
+    <button>Click Button</button>
+
+
+    <h1>Click h1</h1>
+    <h1>Click h1</h1>
+    <h1>Click h1</h1>
+    <h1>Click h1</h1>
+    <h1>Click h1</h1>
+    <h1>Click h1</h1>
+    <h1>Click h1</h1>
+    <h1>Click h1</h1>
+    <h1>Click h1</h1>
+    <h1>Click h1</h1>
+    
+
+
+    <script>
+
+        const buttons = document.querySelectorAll('button');
+        const h1s = document.querySelectorAll('h1');
+
+        function randomColor(){
+            const r = Math.floor(Math.random() * 256);
+            const g = Math.floor(Math.random() * 256);
+            const b = Math.floor(Math.random() * 256);
+            return `rgb(${r}, ${g}, ${b})`;
+            // return `rgb(${r},0,0)`; shades of red
+
+        }
+        // 
+        function randomBorder(){
+            const bordertop = Math.floor(Math.random() *50);
+            const borderright = Math.floor(Math.random() *50);
+            const borderbottom = Math.floor(Math.random() *50);
+            const borderleft = Math.floor(Math.random() *50);
+            return `${bordertop}% ${borderright}% ${borderbottom}% ${borderleft}%`
+        }
+        function border(){
+            this.style.borderRadius = randomBorder();
+        }
+
+
+
+        function colorChange(){
+            this.style.backgroundColor = randomColor();
+        }
+
+        for(let button of buttons){
+            button.addEventListener('click',colorChange)
+            button.addEventListener('click',border)
+        }
+        for(let h1 of h1s){
+            h1.addEventListener('click',colorChange)
+        }
+
+    </script>
+</body>
+</html>
